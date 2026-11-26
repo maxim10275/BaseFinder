@@ -15,11 +15,16 @@ jobs:
           distribution: temurin
           java-version: '21'
 
+      - name: Распаковка исходников
+        run: unzip -q BaseFinder48-source-G.zip -d source
+
       - name: Сборка мода
-        run: chmod +x ./gradlew && ./gradlew build
+        run: |
+          cd source/BaseFinder48-source
+          chmod +x gradlew
+          ./gradlew build
 
       - uses: actions/upload-artifact@v4
         with:
           name: BaseFinder-JAR
-          path: build/libs/*.jar
-          
+          path: source/BaseFinder48-source/build/libs/*.jar
