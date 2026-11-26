@@ -22,4 +22,4 @@ jobs:
         with:
           name: BaseFinder-JAR
           path: build/libs/*.jar
-          echo test, and deployууццвффыв
+          
